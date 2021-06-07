@@ -1,4 +1,14 @@
-const host = 'http://localhost:8000';
+const queryString = require('query-string');
+
+const parsedQuery = queryString.parse(window.location.search);
+
+console.log(parsedQuery);
+
+const host = '/api/drive/' + parsedQuery.utente_id + '/' + parsedQuery.room_id;
+
+console.log('host', host);
+
+
 
 export default {
     url_list: `${host}/filemanager/list`,
